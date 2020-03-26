@@ -11,7 +11,10 @@
 
 namespace WhiteOctober\PagerfantaBundle\Tests\View;
 
-abstract class TranslatedViewTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Translation\DataCollectorTranslator;
+
+abstract class TranslatedViewTest extends TestCase
 {
     private $view;
     private $translator;
@@ -50,7 +53,7 @@ abstract class TranslatedViewTest extends \PHPUnit_Framework_TestCase
 
     private function createTranslatorMock()
     {
-        return $this->createOrGetMock('Symfony\Component\Translation\TranslatorInterface');
+        return $this->createOrGetMock('Symfony\Component\Translation\DataCollectorTranslator');
     }
 
     private function createTranslatedView()

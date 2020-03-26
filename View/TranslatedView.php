@@ -13,7 +13,7 @@ namespace WhiteOctober\PagerfantaBundle\View;
 
 use Pagerfanta\PagerfantaInterface;
 use Pagerfanta\View\ViewInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Translation\DataCollectorTranslator;
 
 /**
  * Translated view.
@@ -25,13 +25,7 @@ abstract class TranslatedView implements ViewInterface
     private $view;
     private $translator;
 
-    /**
-     * Constructor.
-     *
-     * @param ViewInterface       $view       A view.
-     * @param TranslatorInterface $translator A translator interface.
-     */
-    public function __construct(ViewInterface $view, TranslatorInterface $translator)
+    public function __construct(ViewInterface $view, DataCollectorTranslator $translator)
     {
         $this->view = $view;
         $this->translator = $translator;
