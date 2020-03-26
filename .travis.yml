@@ -19,22 +19,11 @@ php:
 matrix:
   fast_finish: true
   include:
-    # PHP 5.3 doesn't install on Trusty on Travis: https://github.com/travis-ci/travis-ci/issues/8219
-    - php: 5.3
-      dist: precise
     # Force testing against LTS versions
-    - php: 5.6
-      env: SYMFONY_VERSION=2.3.*
-    - php: 5.6
-      env: SYMFONY_VERSION=2.7.*
-    - php: 5.6
-      env: SYMFONY_VERSION=2.8.*
-    - php: 5.6
-      env: SYMFONY_VERSION=3.0.*
     - php: 7.2
-      env: SYMFONY_VERSION=4.0.*
+      env: SYMFONY_VERSION=5.0.*
     - php: 7.3
-      env: SYMFONY_VERSION=4.0.*
+      env: SYMFONY_VERSION=5.0.*
 
 cache:
   directories:
